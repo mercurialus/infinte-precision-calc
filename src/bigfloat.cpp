@@ -140,7 +140,7 @@ BigFloat BigFloat::operator+(const BigFloat & other) const
 	BigInt u2 = other.unscaled * pow10(common - other.scale);
 
 	BigInt res;
-	bool neg;
+	bool neg=false;
 	
 	if (this->isNegative == other.isNegative)
 	{
@@ -196,7 +196,7 @@ BigFloat BigFloat::operator/(const BigFloat& other) const {
 
 	BigInt ten = BigInt(10);
 	int resultScale = 0;
-	const int MAX_PRECISION = 10000;
+	//const int MAX_PRECISION = 10000;
 	// We'll build the full decimal expansion until remainder == 0
 	// Shift quotient to the left by multiplying and appending decimal digits
 	while (remainder != 0 && resultScale < MAX_PRECISION) {
@@ -215,6 +215,29 @@ BigFloat BigFloat::operator/(const BigFloat& other) const {
 
 	return result;
 }
+BigFloat BigFloat::operator+=(const BigFloat& other) const
+{
+
+	return (*this) + other;
+}
+BigFloat BigFloat::operator-=(const BigFloat& other) const
+{
+
+	return (*this) - other;
+}
+BigFloat BigFloat::operator*=(const BigFloat& other) const
+{
+
+	return (*this) * other;
+}
+
+BigFloat BigFloat::operator/=(const BigFloat& other) const
+{
+
+	return (*this) / other;
+}
+
+
 std::pair<BigInt, BigInt> BigFloat::divMod10(BigInt num) const
 {
 	std::vector<uint32_t> res(num.value.size(), 0);

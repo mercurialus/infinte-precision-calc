@@ -1,5 +1,7 @@
 #pragma once
-
+#ifndef MAX_PRECISION
+#define MAX_PRECISION 100
+#endif
 #include <iostream>
 #include <string>
 #include <vector>
@@ -28,6 +30,11 @@ public:
 	BigFloat operator*(const BigFloat& other) const;
 	BigFloat operator-(const BigFloat& other) const;
 	BigFloat operator/(const BigFloat& other) const;
+	BigFloat operator+=(const BigFloat& other) const;
+	BigFloat operator-=(const BigFloat& other) const;
+	BigFloat operator*=(const BigFloat& other) const;
+	BigFloat operator/=(const BigFloat& other) const;
+
 	std::pair<BigInt, BigInt> divMod10(BigInt num) const;
 
 	BigInt pow10(int n) const;

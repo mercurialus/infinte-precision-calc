@@ -14,7 +14,7 @@ project ("infinite_precision_calculator")
 # Add source to this project's executable.
 include_directories("include")
 file(GLOB SOURCES "src/*.cpp")
-add_executable(${PROJECT_NAME} ${SOURCES} "src/main.cpp" "src/utils.cpp" "src/bigfloat.cpp")
+add_executable(${PROJECT_NAME} ${SOURCES} "src/main.cpp"  "src/bigfloat.cpp")
 source_group("Source Files" FILES ${SOURCES})
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

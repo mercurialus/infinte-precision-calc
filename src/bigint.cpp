@@ -259,6 +259,33 @@ BigInt BigInt::operator%(const BigInt& other) const
 	return remainder;
 }
 
+BigInt BigInt::operator+=(const BigInt& other) const
+{
+	return (*this) + other;
+}
+
+BigInt BigInt::operator-=(const BigInt& other) const
+{
+
+	return (*this) - other;
+}
+BigInt BigInt::operator*=(const BigInt& other) const
+{
+
+	return (*this) * other;
+}
+
+BigInt BigInt::operator/=(const BigInt& other) const
+{
+
+	return (*this) / other;
+}
+
+BigInt BigInt::operator%=(const BigInt& other) const
+{
+	return (*this) % other;
+}
+
 
 bool BigInt::operator==(const BigInt& other) const
 {
